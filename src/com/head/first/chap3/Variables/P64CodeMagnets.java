@@ -15,10 +15,10 @@ public class P64CodeMagnets {
 		index[1] = 3;
 		index[2] = 0;
 		index[3] = 2;
-		
+
 		int y = 0;
 		int ref;
-		
+
 		while (y < 4) {
 			ref = index[y];
 			System.out.print("island = ");
