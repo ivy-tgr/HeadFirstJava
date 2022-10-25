@@ -10,7 +10,7 @@ public class P39GuessGame {
 
 		public void guess() {
 
-			System.out.println("I'm thinking of a number between 0 and 9");
+			
 		}
 	}
 
@@ -46,10 +46,10 @@ public class P39GuessGame {
 			System.out.println("Player one guessed " + guessp1);
 
 			guessp2 = p2.number;
-			System.out.println("Player one guessed " + guessp2);
+			System.out.println("Player two guessed " + guessp2);
 
 			guessp3 = p3.number;
-			System.out.println("Player one guessed " + guessp3);
+			System.out.println("Player three guessed " + guessp3);
 
 			if (guessp1 == targetNumber) {
 				p1isRight = true;

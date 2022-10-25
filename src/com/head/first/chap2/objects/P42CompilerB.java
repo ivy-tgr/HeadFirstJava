@@ -8,13 +8,13 @@ class Episode {
 	void skipIntro() {
 		System.out.println("Skipping the Intro");
 	}
-	
+
 	void skipToNext() {
 		System.out.println("Loading next episode");
 	}
 
 	void play() {
-		System.out.println("Playing episode"+ episodeNumber);
+		System.out.println("Playing episode " + episodeNumber);
 	}
 }
 
@@ -25,6 +25,6 @@ public class P42CompilerB {
 		episode.episodeNumber = 2;
 		episode.play();
 		episode.skipIntro();
-		
+
 	}
 }
