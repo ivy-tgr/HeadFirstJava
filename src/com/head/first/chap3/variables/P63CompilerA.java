@@ -1,6 +1,6 @@
-package com.head.first.chap3.Variables;
+package com.head.first.chap3.variables;
 
-public class CompilerA {
+public class P63CompilerA {
 
 	public static void main(String[] args) {
 		Books[] myBooks = new Books[3];
