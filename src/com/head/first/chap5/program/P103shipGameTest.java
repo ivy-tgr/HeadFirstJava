@@ -25,8 +25,8 @@ public class P103shipGameTest {
 class GameHelper {
 	public int getUserInput(String prompt) {
 		System.out.print(prompt + ":");
-		try(Scanner scanner = new Scanner(System.in)){
-			return scanner.nextInt();
-		}
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		return scanner.nextInt();
 	}
 }
