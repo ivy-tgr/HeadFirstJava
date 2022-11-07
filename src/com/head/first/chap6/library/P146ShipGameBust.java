@@ -70,9 +70,11 @@ public class P146ShipGameBust {
 	}
 
 	public static void main(String[] args) {
-		P146ShipGameBust game = new P146ShipGameBust();
-		game.setUpGame();
-		game.startPlaying();
+	
+			P146ShipGameBust game = new P146ShipGameBust();
+			game.setUpGame();
+			game.startPlaying();
+			
 	}
 
 }
