@@ -1,12 +1,12 @@
 package com.head.first.chap9.constructing;
 
-class Duck {
+class Cat {
 	int size;
 
-	public Duck(int duckSize) {
+	public Cat(int CatSize) {
 		System.out.println("Quack");
 		
-		size = duckSize;
+		size = CatSize;
 		System.out.println("size is " + size);
 	}
 
@@ -22,7 +22,7 @@ class Duck {
 public class P245Constructor {
 
 	public static void main(String[] args) {
-		Duck d = new Duck(42);
+		Cat d = new Cat(42);
 		d.size();
 
 	}

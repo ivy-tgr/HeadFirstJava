@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class P270Mystery {
 	public static void main(String[] args) {
 		ArrayList<SimUnit> aList = new ArrayList<SimUnit>();
-		//V2Radiator v2 = new V2Radiator(aList);
-		//V3Radiator v3 = new V3Radiator(aList);
-		
+		// V2Radiator v2 = new V2Radiator(aList);
+		// V3Radiator v3 = new V3Radiator(aList);
+
 		for (int z = 0; z < 20; z++) {
 			RetentionBot ret = new RetentionBot(aList);
 		}
@@ -27,21 +27,21 @@ class V3Radiator extends V2Radiator {
 	V3Radiator(ArrayList<SimUnit> lglist) {
 		super(lglist);
 		for (int g = 0; g < 10; g++) {
-			lglist.add(new SimUnit ("Retention"));
+			lglist.add(new SimUnit("Retention"));
 		}
 	}
 }
 
 class SimUnit {
 	String botType;
-	
+
 	SimUnit(String type) {
 		botType = type;
 	}
-	
+
 	int powerUse() {
 		if ("Retention".equals(botType)) {
-			
+
 			return 2;
 		} else {
 			return 4;

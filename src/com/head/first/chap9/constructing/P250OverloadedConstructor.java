@@ -9,19 +9,22 @@ public class P250OverloadedConstructor {
 		boolean canFly = true;
 		int airspeed = 22;
 
-		Cat[] d = new Cat[7];
+		Duck[] d = new Duck[7];
 
-		d[0] = new Cat();
-		d[1] = new Cat(density, weight);
-		d[2] = new Cat(name, feathers);
-		d[3] = new Cat(canFly);
-		d[4] = new Cat(3.3f, airspeed);
-		d[5] = new Cat(false);
-		d[6] = new Cat(airspeed, density);
+		d[0] = new Duck();
+		d[1] = new Duck(density, weight);
+		
+		d[3] = new Duck(canFly);
+		d[4] = new Duck(3.3f, airspeed);
+		d[5] = new Duck(false);
+		d[6] = new Duck(airspeed, density);
+		d[2] = new Duck(name, feathers, density);
+		new Duck(1, 1.6f);
 	}
 }
 
-class Cat {
+class Duck {
+ 
 	@SuppressWarnings("unused")
 	private int kilos = 6;
 	@SuppressWarnings("unused")
@@ -34,32 +37,40 @@ class Cat {
 	private boolean canFly = true;
 	@SuppressWarnings("unused")
 	private int maxSpeed = 25;
- 
-	public Cat() {
-		System.out.println("type 1 Cat");
+
+	public Duck() {
+		System.out.println("type 1 Duck");
 	}
 
-	public Cat(boolean fly) {
+	public Duck(boolean fly) {
 		canFly = fly;
-		System.out.println("type 2 Cat");
+		System.out.println("type 2 Duck");
 	}
 
-	public Cat(String n, long[] f) {
+	public Duck(String n, long[] f, float d) {
+		this(d);
 		name = n;
 		feathers = f;
-		System.out.println("type 3 Cat");
+		System.out.println("type 3 Duck");
 	}
 
-	public Cat(int w, float f) {
+	public Duck(int w, float f) {
+		this(f);
 		kilos = w;
-		floatability = f;
-		System.out.println("type 4 Cat");
+		System.out.println("type 4 Duck");
 	}
 
-	public Cat(float density, int max) {
-		floatability = density;
+	public Duck(float density, int max) {
+		this(density);
 		maxSpeed = max;
-		System.out.println("type 5 Cat");
+		System.out.println("type 5 Duck");
 	}
 
+	private Duck(float floatability) {
+		this.floatability = floatability;
+		if (floatability < 1.2) {
+			throw new IllegalArgumentException("floatability must be higher than 1,2 but was " + floatability);
+		}
+		System.out.print(floatability);
+	}
 }
