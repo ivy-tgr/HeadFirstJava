@@ -10,34 +10,19 @@ public class Calculator {
 
 		System.out.println(
 				"Geben sie ein ob sie Addieren (a) subtrahieren (s) multiplizieren (m) dividieren (d) möchten");
-		@SuppressWarnings("resource")
-
 		Scanner operator = new Scanner(System.in);
 		String Operator = operator.nextLine();
 		System.out.println(Operator);
-
+		
 		System.out.println("Geben sie die erste Zahl ein");
-		String FirstNumber = operator.nextLine();
-		int Number1 = Integer.parseInt(FirstNumber);
-
+		int Number1 = operator.nextInt();
 		System.out.println("Geben sie die zweite Zahl ein");
-		String SecondNumber = operator.nextLine();
-		int Number2 = Integer.parseInt(SecondNumber);
+		int Number2 = operator.nextInt();
 
-		if (Operator.equals("a")) {
-			calc.Add(Number1, Number2);
-
-		} else if (Operator.equals("s")) {
-			calc.subtract(Number1, Number2);
-
-		} else if (Operator.equals("m")) {
-			calc.multiply(Number1, Number2);
-
-		} else if (Operator.equals("d")) {
-			calc.divide(Number1, Number2);
-
-		}
+		calc.whichOperator(Operator,Number1,Number2);
+		
 		System.out.println(calc.result);
+	
 	}
 
 }
@@ -45,20 +30,37 @@ public class Calculator {
 class calculator {
 	public int result;
 
+	public void whichOperator(String Operator, int Number1, int Number2) {
+
+		if (Operator.equals("a")) {
+			Add(Number1, Number2);
+
+		} else if (Operator.equals("s")) {
+			subtract(Number1, Number2);
+
+		} else if (Operator.equals("m")) {
+			multiply(Number1, Number2);
+
+		} else if (Operator.equals("d")) {
+			divide(Number1, Number2);
+
+		}
+	}
+	
 	public int Add(int Number1, int Number2) {
 		result = Number1 + Number2;
 		System.out.println(result);
 		do {
-			System.out.println("Geben sie eine Weitere Zaahl ein ein");
+			System.out.println("Geben sie eine Weitere Zahl ein ein");
+			whichOperator(null, Number1, Number2);
 			Scanner one = new Scanner(System.in);
-			String thirdNumber = one.nextLine();
-			int Number3 = Integer.parseInt(thirdNumber);
+			int Number3 = one.nextInt();
 			result = result + Number3;
 			System.out.println(result);
 		} while (true);
 
 	}
-
+	
 	public int subtract(int Number1, int Number2) {
 		result = Number1 - Number2;
 		System.out.println(result);
