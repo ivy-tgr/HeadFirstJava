@@ -14,7 +14,7 @@ public class P333Jukebox4 {
 
 		Collections.sort(songList);
 		System.out.println(songList);
-		
+
 		ArtistCompare artistCompare = new ArtistCompare();
 		songList.sort(artistCompare);
 		System.out.println(songList);
@@ -27,4 +27,3 @@ class ArtistCompare implements Comparator<SongV3> {
 		return one.getArtist().compareTo(two.getArtist());
 	}
 }
-

@@ -5,7 +5,6 @@ class SongV3 implements Comparable<SongV3> {
 	private String artist;
 	private int bpm;
 
-
 	SongV3(String title, String artist, int bpm) {
 		this.title = title;
 		this.artist = artist;
@@ -28,7 +27,6 @@ class SongV3 implements Comparable<SongV3> {
 		return title;
 	}
 
-	
 	public int compareTo(SongV3 s) {
 		return title.compareTo(s.getTitle());
 	}
