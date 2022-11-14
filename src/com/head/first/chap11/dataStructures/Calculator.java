@@ -8,21 +8,12 @@ public class Calculator {
 
 		System.out.println("Wilkommen beim Taschenrechener");
 
-		System.out.println(
-				"Geben sie ein ob sie Addieren (a) subtrahieren (s) multiplizieren (m) dividieren (d) möchten");
-		Scanner operator = new Scanner(System.in);
-		String Operator = operator.nextLine();
-		System.out.println(Operator);
-		
-		System.out.println("Geben sie die erste Zahl ein");
-		int Number1 = operator.nextInt();
-		System.out.println("Geben sie die zweite Zahl ein");
-		int Number2 = operator.nextInt();
+		System.out.println("Geben sie Ihre Rechnung ein");
 
-		calc.whichOperator(Operator,Number1,Number2);
-		
+		calc.InputNumber();
+
 		System.out.println(calc.result);
-	
+
 	}
 
 }
@@ -32,51 +23,88 @@ class calculator {
 
 	public void whichOperator(String Operator, int Number1, int Number2) {
 
-		if (Operator.equals("a")) {
+		if (Operator.equals("+")) {
 			Add(Number1, Number2);
 
-		} else if (Operator.equals("s")) {
+		} else if (Operator.equals("-")) {
 			subtract(Number1, Number2);
 
-		} else if (Operator.equals("m")) {
+		} else if (Operator.equals("*")) {
 			multiply(Number1, Number2);
 
-		} else if (Operator.equals("d")) {
+		} else if (Operator.equals("/")) {
 			divide(Number1, Number2);
 
+		} else {
+			if (Operator != "+" && Operator !=  "-" && Operator !=  "*" && Operator !=  "/") {
+				System.out.println("Geben sie ein Gültiges zeichen ein");
+				InputNumber();
+			}else  {
+				System.out.println("Geben sie eine Gerade ganz zahl ein.");
+				InputNumber();
+			}
 		}
-	}
+			
+		}
+
 	
+
+	public void InputNumber() {
+		Scanner operator = new Scanner(System.in);
+		int Number1 = operator.nextInt();
+		String Operator = operator.next();
+		int Number2 = operator.nextInt();
+		whichOperator(Operator, Number1, Number2);
+	}
+
+	public void nextCalculate(int result) {
+		Scanner one = new Scanner(System.in);
+		String Operator = one.next();
+		int Number3 = one.nextInt();
+		whichOperator(Operator, result, Number3);
+		result = result + Number3;
+		System.out.println(result);
+	}
+
 	public int Add(int Number1, int Number2) {
 		result = Number1 + Number2;
 		System.out.println(result);
 		do {
 			System.out.println("Geben sie eine Weitere Zahl ein ein");
-			whichOperator(null, Number1, Number2);
-			Scanner one = new Scanner(System.in);
-			int Number3 = one.nextInt();
-			result = result + Number3;
-			System.out.println(result);
+			nextCalculate(result);
+
 		} while (true);
 
 	}
-	
+
 	public int subtract(int Number1, int Number2) {
 		result = Number1 - Number2;
 		System.out.println(result);
-		return result;
+		do {
+			System.out.println("Geben sie eine Weitere Zahl ein ein");
+			nextCalculate(result);
+
+		} while (true);
 	}
 
 	public int multiply(int Number1, int Number2) {
 		result = Number1 * Number2;
 		System.out.println(result);
-		return result;
+		do {
+			System.out.println("Geben sie eine Weitere Zahl ein ein");
+			nextCalculate(result);
+
+		} while (true);
 	}
 
 	public int divide(int Number1, int Number2) {
 		result = Number1 / Number2;
 		System.out.println(result);
-		return result;
+		do {
+			System.out.println("Geben sie eine Weitere Zahl ein ein");
+			nextCalculate(result);
+
+		} while (true);
 	}
 
 }
