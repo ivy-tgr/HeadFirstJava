@@ -11,8 +11,7 @@ public class Calculator {
 		System.out.println("Geben sie Ihre Rechnung ein");
 
 		calc.InputNumber();
-		
-		
+
 		// System.out.println(calc.result);
 
 	}
@@ -53,18 +52,17 @@ class calculator {
 		int Number1 = operator.nextInt();
 		String Operator = operator.next();
 		int Number2 = operator.nextInt();
-		
-		whichOperator(Operator,Number1, Number2);
+
+		whichOperator(Operator, Number1, Number2);
 	}
-	
+
 	public void nextCalculate(int result) {
+
 		Scanner one = new Scanner(System.in);
 		String Operator = one.next();
 		int Number3 = one.nextInt();
 		whichOperator(Operator, result, Number3);
-		//result = result + Number3;
-		System.out.println("wieso löschen?");
-		
+
 	}
 
 	public int Add(int Number1, int Number2) {
@@ -103,13 +101,8 @@ class calculator {
 		System.out.println(result);
 		do {
 			System.out.println("Geben sie eine Weitere Zahl ein errerer");
-			Scanner one = new Scanner(System.in);
-			String exit = one.nextLine();
-			if (exit.equals("e")) {
-				break;
-			} else {
-				nextCalculate(result);
-			}
+
+			nextCalculate(result);
 
 		} while (true);
 
