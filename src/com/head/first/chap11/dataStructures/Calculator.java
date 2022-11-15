@@ -3,6 +3,8 @@ package com.head.first.chap11.dataStructures;
 import java.util.Scanner;
 
 public class Calculator {
+	
+
 	public static void main(String[] args) {
 		calculator calc = new calculator();
 
@@ -12,7 +14,13 @@ public class Calculator {
 
 		calc.InputNumber();
 
-		// System.out.println(calc.result);
+		
+		do {
+			System.out.println(calc.result);
+			System.out.println("Geben sie eine Weitere Zahl ein ");
+			calc.nextCalculate(calc.result);
+
+		} while (true);
 
 	}
 
@@ -67,44 +75,23 @@ class calculator {
 
 	public int Add(int Number1, int Number2) {
 		result = Number1 + Number2;
-		System.out.println(result);
-		do {
-			System.out.println("Geben sie eine Weitere Zahl ein ");
-			nextCalculate(result);
-
-		} while (true);
+		return result;
 
 	}
 
 	public int subtract(int Number1, int Number2) {
 		result = Number1 - Number2;
-		System.out.println(result);
-		do {
-			System.out.println("Geben sie eine Weitere Zahl ein ");
-			nextCalculate(result);
-
-		} while (true);
+		return result;
 	}
 
 	public int multiply(int Number1, int Number2) {
 		result = Number1 * Number2;
-		System.out.println(result);
-		do {
-			System.out.println("Geben sie eine Weitere Zahl ein ");
-			nextCalculate(result);
-
-		} while (true);
+		return result;
 	}
 
-	public void divide(int Number1, int Number2) {
+	public int divide(int Number1, int Number2) {
 		result = Number1 / Number2;
-		System.out.println(result);
-		do {
-			System.out.println("Geben sie eine Weitere Zahl ein errerer");
-
-			nextCalculate(result);
-
-		} while (true);
+		return result;
 
 	}
 
