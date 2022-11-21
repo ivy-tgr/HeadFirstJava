@@ -6,4 +6,5 @@
  *
  */
 module headFirstJava {
+	requires java.desktop;
 }
