@@ -16,26 +16,26 @@ public class Calculator {
 		do {
 			System.out.println(calc.result);
 			Scanner two = new Scanner(System.in);
-			
-			// System.out.println("Geben sie eine Weitere Zahl ein ");
+
 			try {
 				String Operator = two.next();
-				int Number3 = two.nextInt();
+
 				if (Operator.equals("e")) {
 					System.out.println("Vielen Dank für das Benutzen des Rechners");
-					
-				}else {
+					break;
+
+				} else {
+					int Number3 = two.nextInt();
 					calc.whichOperator(Operator, calc.result, Number3);
 				}
-				
+
 			} catch (Exception e) {
 				System.out.println("Geben sie eine Gültige Zahl ein");
-				calc.nextCalculate(calc.result);
+				
 			}
-			
+
 		} while (true);
-		
-		
+
 	}
 
 }
@@ -63,7 +63,7 @@ class calculator {
 
 		} else {
 			System.out.println("Geben sie ein Gültiges zeichen ein");
-			nextCalculate(result);
+
 		}
 
 	}
@@ -81,10 +81,6 @@ class calculator {
 			InputNumber();
 		}
 
-	}
-
-	public void nextCalculate(int result) {
-		System.out.println(" hallo ich bin nextcalculate");
 	}
 
 	public int Add(int Number1, int Number2) {
