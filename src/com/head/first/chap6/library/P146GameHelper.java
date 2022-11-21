@@ -44,7 +44,7 @@ public class P146GameHelper {
 		}
 		savePositionToGrid(shipCoords);
 		ArrayList<String> alphaCells = convertCoordsToAlphaFormat(shipCoords);
-		System.out.println(alphaCells);
+		//System.out.println(alphaCells);
 		return alphaCells;
 	}
 
