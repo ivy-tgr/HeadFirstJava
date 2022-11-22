@@ -22,8 +22,8 @@ public class P146ShipGameBust {
 		System.out.println("Your goal is to sink three ships ");
 		System.out.println("Adria, Canista and Poniez");
 		System.out.println("Try to sink them all in the fewest number of guesses");
-		System.out.println("  A B C D E F G");
-		System.out.println("  _ _ _ _ _ _ _");
+		System.out.println("   A B C D E F G");
+		System.out.println("   _ _ _ _ _ _ _");
 		for (int x = 0; x < 7; x++) {
 			System.out.println(x + " |_|_|_|_|_|_|_|");
 		}
@@ -66,7 +66,7 @@ public class P146ShipGameBust {
 	private void finishGame() {
 		System.out.println("all ships are destroyed");
 		if (numOfGuesses <= 18) {
-			System.out.println("it took you only " + numOfGuesses + "guesses");
+			System.out.println("it took you only " + numOfGuesses + " guesses");
 
 		} else {
 			System.out.println("Took you long enough. " + numOfGuesses + " guesses");
